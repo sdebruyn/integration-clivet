@@ -1,0 +1,40 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured"
+        },
+        "error": {
+            "cannot_connect": "Failed to connect",
+            "unknown": "Unexpected error"
+        },
+        "flow_title": "Clivet heat pump connection configuration",
+        "step": {
+            "network": {
+                "data": {
+                    "host": "Host",
+                    "port": "Port",
+                    "slave": "Slave/device/address ID"
+                },
+                "description": "Provide the network connection details to connect to the heat pump over network.",
+                "title": "Connect to Clivet over network"
+            },
+            "serial": {
+                "data": {
+                    "baudrate": "Baudrate",
+                    "parity": "Parity",
+                    "port": "Port",
+                    "slave": "Slave/device/address ID"
+                },
+                "description": "Provide the serial connection details to connect to the heat pump over serial.",
+                "title": "Connect to Clivet over serial/USB"
+            },
+            "user": {
+                "data": {
+                    "connection_type": "Connection Type"
+                },
+                "description": "Choose how you want to connect to your Clivet heat pump.",
+                "title": "Select connection type"
+            }
+        }
+    }
+}
