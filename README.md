@@ -1,0 +1,1 @@
+# Integration for Home Assistant for Clivet Sphera-T heat pumps
