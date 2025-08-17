@@ -31,6 +31,14 @@ async def async_setup_entry(
         ),
         ClivetSwitchEntity(
             address=2600,
+            bit=2,
+            name="Cool/heat mode",
+            device=ClivetDevice.HEAT_PUMP,
+            coordinator=coordinator,
+            invert=True,
+        ),
+        ClivetSwitchEntity(
+            address=2600,
             bit=4,
             name="DHW only mode",
             device=ClivetDevice.HEAT_PUMP,
