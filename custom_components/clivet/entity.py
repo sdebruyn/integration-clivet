@@ -87,6 +87,7 @@ class ClivetBooleanBaseEntity(ClivetBaseEntity):
         self._attr_unique_id = (
             f"{self._attr_unique_id}_{bit}" if bit is not None else self._attr_unique_id
         )
+        self._attr_unique_id += f"_{'inverted' if invert else ''}"
 
     @staticmethod
     def decode_bool(
