@@ -64,7 +64,18 @@ class ClivetCoordinator(DataUpdateCoordinator[dict[int, int | None]]):
     @staticmethod
     def build_unique_id(data: Mapping[str, Any]) -> str:
         """Build a unique ID for the coordinator."""
-        return f"{data[CONF_HOST]}_{data[CONF_PORT]}_{data[CONF_SLAVE]}"
+        properties = [
+            CONF_HOST,
+            CONF_PORT,
+            CONF_SLAVE,
+        ]
+        values = map(
+            lambda x: str(x),
+            filter(
+                lambda x: x is not None, [data.get(prop, None) for prop in properties]
+            ),
+        )
+        return "_".join(values)
 
     def model_name(self) -> str:
         device_size = self.data.get(4312, None)
