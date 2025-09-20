@@ -135,7 +135,7 @@ class ClivetCoordinator(DataUpdateCoordinator[dict[int, int | None]]):
                 if not connected:
                     raise OfflineException
             result = await self.client.read_holding_registers(
-                address, count=count, slave=self.device_id
+                address, count=count, device_id=self.device_id
             )
             if result.isError():
                 self.logger.error(
@@ -158,7 +158,7 @@ class ClivetCoordinator(DataUpdateCoordinator[dict[int, int | None]]):
                 if not connected:
                     raise OfflineException
             result = await self.client.write_register(
-                address, value, slave=self.device_id
+                address, value, device_id=self.device_id
             )
             if result.isError():
                 self.logger.error(
@@ -198,7 +198,7 @@ class ClivetCoordinator(DataUpdateCoordinator[dict[int, int | None]]):
                 return
 
             result = await self.client.write_register(
-                address, new_value, slave=self.device_id
+                address, new_value, device_id=self.device_id
             )
             if result.isError():
                 self.logger.error(
